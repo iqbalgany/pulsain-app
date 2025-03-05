@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pulsain/navbar.dart';
 import 'package:pulsain/screens/get_started_screen.dart';
 import 'package:pulsain/screens/home_screen.dart';
+import 'package:pulsain/screens/inbox_screen.dart';
 import 'package:pulsain/screens/onboarding_1_screen.dart';
-import 'package:pulsain/screens/onboarding_2_screen.dart';
-import 'package:pulsain/screens/onboarding_3_screen.dart';
 import 'package:pulsain/screens/splash_screen.dart';
 import 'package:pulsain/screens/tnc_screen.dart';
 import 'package:pulsain/screens/tukar_pulsa.dart';
@@ -20,17 +19,18 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/nav-bar',
+      initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
-        '/onboarding-1': (context) => Onboarding1Screen(),
-        '/onboarding-2': (context) => Onboarding2Screen(),
-        '/onboarding-3': (context) => Onboarding3Screen(),
+        '/onboarding-1': (context) => OnboardingScreen(),
         '/get-started': (context) => GetStartedScreen(),
         '/tnc': (context) => TNCScreen(),
         '/home': (context) => HomeScreen(),
         '/tukar-pulsa': (context) => TukarPulsa(),
-        '/nav-bar': (context) => Navbar(),
+        '/inbox': (context) => InboxScreen(),
+
+        /// Bottom Navigation Bar
+        '/navbar': (context) => Navbar(),
       },
     );
   }

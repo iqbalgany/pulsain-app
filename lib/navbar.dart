@@ -126,7 +126,7 @@ class _NavbarState extends State<Navbar> {
     Widget floatingActionButton() {
       return Padding(
         padding: const EdgeInsets.only(
-          bottom: 59,
+          bottom: 30,
         ),
         child: Align(
           alignment: Alignment.bottomCenter,

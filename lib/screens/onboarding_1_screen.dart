@@ -2,8 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pulsain/constans/colors.dart';
 
-class Onboarding1Screen extends StatelessWidget {
-  const Onboarding1Screen({super.key});
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  int currentIndex = 0;
+
+  final List<Map<String, String>> onboardingData = [
+    {
+      'image': 'assets/enjoy_everyday.png',
+      'title': 'Terpercaya',
+      'description':
+          'Convert paling terpercaya untuk penukaran\npulsa menjadi e-money',
+      'carousel': 'assets/carousel_1.svg',
+      'button': 'Selanjutnya',
+    },
+    {
+      'image': 'assets/transaction_fast.png',
+      'title': 'Termudah dan Teraman',
+      'description':
+          'Termudah dan paling aman untuk transaksi\npenukaran pulsa menjadi e-money',
+      'carousel': 'assets/carousel_2.svg',
+      'button': 'Selanjutnya',
+    },
+    {
+      'image': 'assets/onboarding3.png',
+      'title': 'Termurah',
+      'description':
+          'Rate convert paling murah untuk penukaran\npulsa menjadi e-money',
+      'carousel': 'assets/carousel_3.svg',
+      'button': 'Mulai',
+    },
+  ];
+
+  void _nextStep() {
+    setState(() {
+      if (currentIndex < onboardingData.length - 1) {
+        currentIndex++;
+      } else {
+        Navigator.pushReplacementNamed(context, '/tnc');
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +56,14 @@ class Onboarding1Screen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/enjoy_everyday.png'),
+            Image.asset(
+              onboardingData[currentIndex]['image']!,
+              width: 390,
+              height: 400,
+            ),
             SizedBox(height: 79.5),
             Text(
-              'Terpercaya',
+              onboardingData[currentIndex]['title']!,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
@@ -23,7 +71,7 @@ class Onboarding1Screen extends StatelessWidget {
             ),
             SizedBox(height: 15),
             Text(
-              'Convert paling terpercaya untuk penukaran\npulsa menjadi e-money',
+              onboardingData[currentIndex]['description']!,
               style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontSize: 14,
@@ -32,7 +80,7 @@ class Onboarding1Screen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 85),
-            SvgPicture.asset('assets/carousel_1.svg'),
+            SvgPicture.asset(onboardingData[currentIndex]['carousel']!),
             SizedBox(height: 85),
             Container(
               width: 165,
@@ -42,14 +90,12 @@ class Onboarding1Screen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, '/onboarding-2');
-                },
+                onTap: _nextStep,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Selanjutnya',
+                      onboardingData[currentIndex]['button']!,
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
@@ -57,9 +103,12 @@ class Onboarding1Screen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 5),
-                    Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
+                    Visibility(
+                      visible: currentIndex < onboardingData.length - 1,
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      ),
                     ),
                   ],
                 ),

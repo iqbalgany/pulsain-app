@@ -94,7 +94,7 @@ class _TNCScreenState extends State<TNCScreen> {
             InkWell(
               onTap: isChecked
                   ? () {
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.pushNamed(context, '/navbar');
                     }
                   : null,
               child: Container(

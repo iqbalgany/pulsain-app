@@ -190,7 +190,9 @@ class AppBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.5),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/inbox');
+            },
             icon: Icon(Icons.notifications_none_outlined),
           ),
         ),
@@ -252,7 +254,7 @@ class CarouselCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           child: Image.asset(
             imagePath,
-            width: double.infinity, // Pastikan gambar penuh
+            width: double.infinity,
             height: 400,
             fit: BoxFit.contain,
           ),
