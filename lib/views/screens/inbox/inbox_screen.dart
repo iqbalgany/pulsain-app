@@ -3,7 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constans/colors.dart';
+import '../../../constans/colors.dart';
 
 class InboxScreen extends StatefulWidget {
   const InboxScreen({super.key});
@@ -408,10 +408,12 @@ class _InboxScreenState extends State<InboxScreen> {
       },
       child: Container(
         decoration: BoxDecoration(
-            border: Border(
-                bottom: BorderSide(
-          color: Color(0xffE9E8E8),
-        ))),
+          border: Border(
+            bottom: BorderSide(
+              color: Color(0xffE9E8E8),
+            ),
+          ),
+        ),
         child: ListTile(
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -484,10 +486,12 @@ class _InboxScreenState extends State<InboxScreen> {
             bottom: 11,
           ),
           decoration: BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(
-            color: isSelected ? ColorsTheme().primary : Colors.blue[200]!,
-          ))),
+            border: Border(
+              bottom: BorderSide(
+                color: isSelected ? ColorsTheme().primary : Colors.blue[200]!,
+              ),
+            ),
+          ),
           child: Text(
             text,
             textAlign: TextAlign.center,

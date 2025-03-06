@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulsain/constans/colors.dart';
-import 'package:pulsain/screens/activity_screen.dart';
-import 'package:pulsain/screens/home_screen.dart';
-import 'package:pulsain/screens/profile_screen.dart';
-import 'package:pulsain/screens/rekening_screen.dart';
+import 'package:pulsain/views/screens/activity/activity_screen.dart';
+import 'package:pulsain/views/screens/home/home_screen.dart';
+import 'package:pulsain/views/screens/profile/profile_screen.dart';
+import 'package:pulsain/views/screens/rekening/rekening_screen.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({
@@ -110,7 +110,7 @@ class _NavbarState extends State<Navbar> {
               navbarItem(
                 text: 'Rekening',
                 index: 2,
-                icon: Icons.add_card_rounded,
+                icon: Icons.credit_card_rounded,
               ),
               navbarItem(
                 text: 'Profile',

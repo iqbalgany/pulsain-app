@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: ColorsTheme().primary,
       body: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '/onboarding-1');
+          Navigator.pushNamed(context, '/onboarding');
         },
         child: Center(
           child: Column(
