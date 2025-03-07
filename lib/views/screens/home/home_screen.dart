@@ -300,9 +300,65 @@ class ContentCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/line_rate.png'),
+              Stack(
+                children: [
+                  Container(
+                    height: 15,
+                    width: 37,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.transparent,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.star,
+                          size: 10,
+                          color: Color(0xffCED3DA),
+                        ),
+                        SizedBox(width: 3),
+                        Text(
+                          '0.8',
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 10,
+                            color: Color(0xffCED3DA),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(width: 17),
-              Image.asset('assets/rate.png'),
+              Container(
+                height: 15,
+                width: 37,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: ColorsTheme().primary,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.star,
+                      size: 10,
+                      color: Colors.white,
+                    ),
+                    SizedBox(width: 3),
+                    Text(
+                      '0.9',
+                      style: GoogleFonts.outfit(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 10,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ],

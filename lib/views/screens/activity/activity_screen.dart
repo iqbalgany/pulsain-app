@@ -113,133 +113,136 @@ class _ActivityScreenState extends State<ActivityScreen> {
   }
 
   Widget orderCard(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 15,
-        vertical: 10,
-      ),
-      decoration: BoxDecoration(
-        color: Color(0xffffffff),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/icon_telkomsel.png',
-                  width: 35,
-                  height: 35,
-                ),
-                SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '#TP-TL-1022007',
-                      style: GoogleFonts.outfit(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Text(
-                      '29 Februari 2024',
-                      style: GoogleFonts.outfit(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 10,
-                        color: Color(0xff9F9F9F),
-                      ),
-                    ),
-                  ],
-                ),
-                Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.blue[50],
-                    borderRadius: BorderRadius.circular(20),
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, '/activity-status-pending'),
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 15,
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+          color: Color(0xffffffff),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/icon_telkomsel.png',
+                    width: 35,
+                    height: 35,
                   ),
-                  width: 63,
-                  height: 17,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.watch_later_rounded,
-                        color: ColorsTheme().primary,
-                        size: 12,
-                      ),
-                      SizedBox(width: 2),
                       Text(
-                        'Diproses',
+                        '#TP-TL-1022007',
+                        style: GoogleFonts.outfit(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Text(
+                        '29 Februari 2024',
                         style: GoogleFonts.outfit(
                           fontWeight: FontWeight.w300,
                           fontSize: 10,
-                          color: ColorsTheme().primary,
+                          color: Color(0xff9F9F9F),
                         ),
                       ),
                     ],
                   ),
+                  Spacer(),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue[50],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    width: 63,
+                    height: 17,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.watch_later_rounded,
+                          color: ColorsTheme().primary,
+                          size: 12,
+                        ),
+                        SizedBox(width: 2),
+                        Text(
+                          'Diproses',
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 10,
+                            color: ColorsTheme().primary,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Dash(
+              direction: Axis.horizontal,
+              length: MediaQuery.sizeOf(context).width - 80,
+              dashLength: 5,
+              dashColor: Color(0xffE9E9E9),
+            ),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                Text(
+                  'Nominal Pulsa',
+                  style: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  'Rp 100.000',
+                  style: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
-          ),
-          SizedBox(height: 10),
-          Dash(
-            direction: Axis.horizontal,
-            length: MediaQuery.sizeOf(context).width - 80,
-            dashLength: 5,
-            dashColor: Color(0xffE9E9E9),
-          ),
-          SizedBox(height: 10),
-          Row(
-            children: [
-              Text(
-                'Nominal Pulsa',
-                style: GoogleFonts.outfit(
-                  fontWeight: FontWeight.w300,
-                  fontSize: 12,
-                  color: Colors.black,
+            SizedBox(height: 5),
+            Row(
+              children: [
+                Text(
+                  'Hasil Konversi',
+                  style: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
                 ),
-              ),
-              Spacer(),
-              Text(
-                'Rp 100.000',
-                style: GoogleFonts.outfit(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                  color: Colors.black,
+                Spacer(),
+                Text(
+                  'Rp 73.000',
+                  style: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
+                    color: Color(0xff05DC31),
+                  ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 5),
-          Row(
-            children: [
-              Text(
-                'Hasil Konversi',
-                style: GoogleFonts.outfit(
-                  fontWeight: FontWeight.w300,
-                  fontSize: 12,
-                  color: Colors.black,
-                ),
-              ),
-              Spacer(),
-              Text(
-                'Rp 73.000',
-                style: GoogleFonts.outfit(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                  color: Color(0xff05DC31),
-                ),
-              ),
-            ],
-          )
-        ],
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
