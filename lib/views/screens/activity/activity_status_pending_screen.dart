@@ -62,7 +62,7 @@ class _ActivityStatusPendingScreenState
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
-                        'assets/icon_menunggu.png',
+                        'assets/icon_pending.png',
                         width: 135,
                         height: 135,
                       ),

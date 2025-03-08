@@ -11,6 +11,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  String selectedCountryCode = '+62';
+
   void _editPhotoProfile() {
     showModalBottomSheet(
       context: context,
@@ -298,7 +300,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       builder: (context) {
         return Container(
           width: MediaQuery.sizeOf(context).width,
-          height: 350,
+          height: 380,
           child: Column(
             children: [
               SizedBox(height: 15),
@@ -311,7 +313,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               SizedBox(height: 15),
               Text(
-                'Ubah Nama Lengkap',
+                'Ubah Nomor Telepon',
                 style: GoogleFonts.outfit(
                   fontWeight: FontWeight.w500,
                   fontSize: 18,
@@ -341,6 +343,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         TextField(
                           cursorColor: ColorsTheme().primary,
                           decoration: InputDecoration(
+                            prefixIcon: Container(
+                              padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
+                              margin: EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                color: Colors.blue[100],
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(5),
+                                  bottomLeft: Radius.circular(5),
+                                ),
+                              ),
+                              child: DropdownButton<String>(
+                                value: selectedCountryCode,
+                                iconEnabledColor: ColorsTheme().primary,
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    selectedCountryCode = newValue!;
+                                  });
+                                },
+                                items: ['+62', '+1', "92", '+44']
+                                    .map(
+                                      (String value) =>
+                                          DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(
+                                          value,
+                                          style: GoogleFonts.outfit(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 12,
+                                            color: ColorsTheme().primary,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                    .toList(),
+                                underline: SizedBox(),
+                              ),
+                            ),
                             hintText: '82212345678',
                             hintStyle: GoogleFonts.outfit(
                               fontSize: 12,
@@ -583,7 +622,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(height: 10),
                   profileItem(
                     icon: 'assets/icon_help.png',
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(context, '/contact'),
                     title: 'Pusat Bantuan',
                     subtitle: 'Hubungi kami terkait kendala anda',
                   ),
