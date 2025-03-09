@@ -279,26 +279,29 @@ class _ActivityStatusPendingScreenState
                       ),
                     ),
                     SizedBox(height: 10),
-                    Container(
-                      width: 325,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 42,
-                        vertical: 15,
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                          color: ColorsTheme().primary,
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, '/chat'),
+                      child: Container(
+                        width: 325,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 42,
+                          vertical: 15,
                         ),
-                        color: Colors.white,
-                      ),
-                      child: Text(
-                        'Chat',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          color: ColorsTheme().primary,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            color: ColorsTheme().primary,
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: Text(
+                          'Chat',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: ColorsTheme().primary,
+                          ),
                         ),
                       ),
                     ),

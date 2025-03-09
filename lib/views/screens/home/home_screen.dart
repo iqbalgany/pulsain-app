@@ -10,6 +10,316 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void informationRate() {
+      showModalBottomSheet(
+        context: context,
+        builder: (context) => Container(
+          width: MediaQuery.sizeOf(context).width,
+          height: 350,
+          child: Column(
+            children: [
+              SizedBox(height: 15),
+              Container(
+                height: 2,
+                width: 60,
+                decoration: BoxDecoration(
+                  color: ColorsTheme().primary,
+                ),
+              ),
+              SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/telkomsel.png',
+                      width: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Telkomsel',
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(
+                          'Daftar Informasi rate',
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 12,
+                            color: Color(0xff9F9F9F),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    SvgPicture.asset('assets/promo_badge.svg')
+                  ],
+                ),
+              ),
+              Divider(),
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          '30.000 - 1.000.000',
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 12,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 15,
+                          width: 37,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.transparent,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 10,
+                                color: Color(0xffCED3DA),
+                              ),
+                              SizedBox(width: 3),
+                              Text(
+                                '0.8',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: Color(0xffCED3DA),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 17),
+                        Container(
+                          height: 15,
+                          width: 37,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: ColorsTheme().primary,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 10,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 3),
+                              Text(
+                                '0.9',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Dash(
+                      direction: Axis.horizontal,
+                      length: MediaQuery.sizeOf(context).width - 40,
+                      dashLength: 5,
+                      dashColor: Color(0xffE9E9E9),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text(
+                          '30.000 - 10.000.000',
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 12,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 15,
+                          width: 37,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.transparent,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 10,
+                                color: Color(0xffCED3DA),
+                              ),
+                              SizedBox(width: 3),
+                              Text(
+                                '0.8',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: Color(0xffCED3DA),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 17),
+                        Container(
+                          height: 15,
+                          width: 37,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: ColorsTheme().primary,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 10,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 3),
+                              Text(
+                                '0.9',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Dash(
+                      direction: Axis.horizontal,
+                      length: MediaQuery.sizeOf(context).width - 40,
+                      dashLength: 5,
+                      dashColor: Color(0xffE9E9E9),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text(
+                          '30.000 - 100.000.000',
+                          style: GoogleFonts.outfit(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 12,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 15,
+                          width: 37,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.transparent,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 10,
+                                color: Color(0xffCED3DA),
+                              ),
+                              SizedBox(width: 3),
+                              Text(
+                                '0.8',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: Color(0xffCED3DA),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 17),
+                        Container(
+                          height: 15,
+                          width: 37,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: ColorsTheme().primary,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 10,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 3),
+                              Text(
+                                '0.9',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Divider(),
+              InkWell(
+                onTap: () => Navigator.pushNamed(context, '/tukar-pulsa'),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 42,
+                    vertical: 15,
+                  ),
+                  margin: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: ColorsTheme().primary,
+                  ),
+                  child: Text(
+                    'Tukar Pulsa',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.outfit(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: Color(0xffF1FDFF),
       body: SingleChildScrollView(
@@ -47,18 +357,30 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ContentCard(),
-                  ContentCard(),
-                  ContentCard(),
+                  ContentCard(
+                    onTap: informationRate,
+                  ),
+                  ContentCard(
+                    onTap: informationRate,
+                  ),
+                  ContentCard(
+                    onTap: informationRate,
+                  ),
                 ],
               ),
               SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ContentCard(),
-                  ContentCard(),
-                  ContentCard(),
+                  ContentCard(
+                    onTap: informationRate,
+                  ),
+                  ContentCard(
+                    onTap: informationRate,
+                  ),
+                  ContentCard(
+                    onTap: informationRate,
+                  ),
                 ],
               ),
               SizedBox(height: 100),
@@ -265,103 +587,104 @@ class CarouselCard extends StatelessWidget {
 }
 
 class ContentCard extends StatelessWidget {
+  final Function()? onTap;
   const ContentCard({
     super.key,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 120,
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(7),
-      ),
-      child: Column(
-        children: [
-          SvgPicture.asset('assets/promo_badge.svg'),
-          SizedBox(height: 14.5),
-          Image.asset(
-            'assets/telkomsel.png',
-            width: 45,
-            height: 45,
-          ),
-          SizedBox(height: 13),
-          Text(
-            'Telkomsel',
-            style: GoogleFonts.outfit(
-              fontWeight: FontWeight.w500,
-              fontSize: 12,
-              color: Colors.black,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 120,
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(7),
+        ),
+        child: Column(
+          children: [
+            SvgPicture.asset('assets/promo_badge.svg'),
+            SizedBox(height: 14.5),
+            Image.asset(
+              'assets/telkomsel.png',
+              width: 45,
+              height: 45,
             ),
-          ),
-          Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    height: 15,
-                    width: 37,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.transparent,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.star,
-                          size: 10,
+            SizedBox(height: 13),
+            Text(
+              'Telkomsel',
+              style: GoogleFonts.outfit(
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+                color: Colors.black,
+              ),
+            ),
+            Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 15,
+                  width: 37,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.transparent,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.star,
+                        size: 10,
+                        color: Color(0xffCED3DA),
+                      ),
+                      SizedBox(width: 3),
+                      Text(
+                        '0.8',
+                        style: GoogleFonts.outfit(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
                           color: Color(0xffCED3DA),
                         ),
-                        SizedBox(width: 3),
-                        Text(
-                          '0.8',
-                          style: GoogleFonts.outfit(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 10,
-                            color: Color(0xffCED3DA),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              SizedBox(width: 17),
-              Container(
-                height: 15,
-                width: 37,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: ColorsTheme().primary,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.star,
-                      size: 10,
-                      color: Colors.white,
-                    ),
-                    SizedBox(width: 3),
-                    Text(
-                      '0.9',
-                      style: GoogleFonts.outfit(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 10,
+                SizedBox(width: 17),
+                Container(
+                  height: 15,
+                  width: 37,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: ColorsTheme().primary,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.star,
+                        size: 10,
                         color: Colors.white,
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ],
+                      SizedBox(width: 3),
+                      Text(
+                        '0.9',
+                        style: GoogleFonts.outfit(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

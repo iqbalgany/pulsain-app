@@ -3,6 +3,7 @@ import 'package:pulsain/views/navbar.dart';
 import 'package:pulsain/views/screens/activity/activity_screen.dart';
 import 'package:pulsain/views/screens/activity/activity_status_pending_screen.dart';
 import 'package:pulsain/views/screens/activity/activity_status_screen.dart';
+import 'package:pulsain/views/screens/chat/chat_screen.dart';
 import 'package:pulsain/views/screens/get%20started/get_started_screen.dart';
 import 'package:pulsain/views/screens/home/home_screen.dart';
 import 'package:pulsain/views/screens/inbox/inbox_screen.dart';
@@ -52,6 +53,7 @@ class MainApp extends StatelessWidget {
         '/bank-list': (context) => DaftarBankScreen(),
         '/profile': (context) => ProfileScreen(),
         '/contact': (context) => ContactScreen(),
+        '/chat': (context) => ChatScreen(),
 
         /// Bottom Navigation Bar
         '/navbar': (context) => Navbar(),
