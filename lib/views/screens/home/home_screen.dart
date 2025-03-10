@@ -84,23 +84,35 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             color: Colors.transparent,
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Stack(
                             children: [
-                              Icon(
-                                Icons.star,
-                                size: 10,
-                                color: Color(0xffCED3DA),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    size: 10,
+                                    color: Color(0xffCED3DA),
+                                  ),
+                                  SizedBox(width: 3),
+                                  Text(
+                                    '0.8',
+                                    style: GoogleFonts.outfit(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 10,
+                                      color: Color(0xffCED3DA),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              SizedBox(width: 3),
-                              Text(
-                                '0.8',
-                                style: GoogleFonts.outfit(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 10,
+                              Align(
+                                alignment: Alignment.center,
+                                child: Container(
+                                  width: 34,
+                                  height: 1,
                                   color: Color(0xffCED3DA),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                         ),
@@ -160,23 +172,35 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             color: Colors.transparent,
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Stack(
                             children: [
-                              Icon(
-                                Icons.star,
-                                size: 10,
-                                color: Color(0xffCED3DA),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    size: 10,
+                                    color: Color(0xffCED3DA),
+                                  ),
+                                  SizedBox(width: 3),
+                                  Text(
+                                    '0.8',
+                                    style: GoogleFonts.outfit(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 10,
+                                      color: Color(0xffCED3DA),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              SizedBox(width: 3),
-                              Text(
-                                '0.8',
-                                style: GoogleFonts.outfit(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 10,
+                              Align(
+                                alignment: Alignment.center,
+                                child: Container(
+                                  width: 34,
+                                  height: 1,
                                   color: Color(0xffCED3DA),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                         ),
@@ -236,23 +260,35 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             color: Colors.transparent,
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Stack(
                             children: [
-                              Icon(
-                                Icons.star,
-                                size: 10,
-                                color: Color(0xffCED3DA),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    size: 10,
+                                    color: Color(0xffCED3DA),
+                                  ),
+                                  SizedBox(width: 3),
+                                  Text(
+                                    '0.8',
+                                    style: GoogleFonts.outfit(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 10,
+                                      color: Color(0xffCED3DA),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              SizedBox(width: 3),
-                              Text(
-                                '0.8',
-                                style: GoogleFonts.outfit(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 10,
+                              Align(
+                                alignment: Alignment.center,
+                                child: Container(
+                                  width: 34,
+                                  height: 1,
                                   color: Color(0xffCED3DA),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                         ),
@@ -290,7 +326,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Divider(),
-              InkWell(
+              GestureDetector(
                 onTap: () => Navigator.pushNamed(context, '/tukar-pulsa'),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width,
@@ -342,7 +378,7 @@ class HomeScreen extends StatelessWidget {
                 direction: Axis.horizontal,
                 length: MediaQuery.sizeOf(context).width - 40,
                 dashLength: 5,
-                dashColor: Colors.grey,
+                dashColor: Color(0xffE9E9E9),
               ),
               SizedBox(height: 15),
               Text(
@@ -358,12 +394,21 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ContentCard(
+                    image: 'assets/telkomsel.png',
+                    text: 'Telkomsel',
+                    isPromo: true,
                     onTap: informationRate,
                   ),
                   ContentCard(
+                    image: 'assets/logo_axis.png',
+                    text: 'Axis',
+                    isPromo: true,
                     onTap: informationRate,
                   ),
                   ContentCard(
+                    image: 'assets/logo_xl.png',
+                    text: 'XL',
+                    isPromo: true,
                     onTap: informationRate,
                   ),
                 ],
@@ -373,12 +418,21 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ContentCard(
+                    image: 'assets/logo_indosat.png',
+                    text: 'Indosat',
+                    isPromo: true,
                     onTap: informationRate,
                   ),
                   ContentCard(
+                    image: 'assets/logo_3.png',
+                    text: 'Tri',
+                    isPromo: false,
                     onTap: informationRate,
                   ),
                   ContentCard(
+                    image: 'assets/logo_smartfren.png',
+                    text: 'Smartfren',
+                    isPromo: false,
                     onTap: informationRate,
                   ),
                 ],
@@ -588,9 +642,16 @@ class CarouselCard extends StatelessWidget {
 
 class ContentCard extends StatelessWidget {
   final Function()? onTap;
+  final String image;
+  final String text;
+  final bool? isPromo;
+
   const ContentCard({
     super.key,
     this.onTap,
+    required this.image,
+    required this.text,
+    this.isPromo = true,
   });
 
   @override
@@ -599,90 +660,126 @@ class ContentCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: 120,
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(7),
         ),
-        child: Column(
+        child: Stack(
+          clipBehavior: Clip.none,
           children: [
-            SvgPicture.asset('assets/promo_badge.svg'),
-            SizedBox(height: 14.5),
-            Image.asset(
-              'assets/telkomsel.png',
-              width: 45,
-              height: 45,
-            ),
-            SizedBox(height: 13),
-            Text(
-              'Telkomsel',
-              style: GoogleFonts.outfit(
-                fontWeight: FontWeight.w500,
-                fontSize: 12,
-                color: Colors.black,
-              ),
-            ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Column(
               children: [
-                Container(
-                  height: 15,
-                  width: 37,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.transparent,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.star,
-                        size: 10,
-                        color: Color(0xffCED3DA),
-                      ),
-                      SizedBox(width: 3),
-                      Text(
-                        '0.8',
-                        style: GoogleFonts.outfit(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 10,
-                          color: Color(0xffCED3DA),
-                        ),
-                      ),
-                    ],
+                SizedBox(height: 14.5),
+                Image.asset(
+                  image,
+                  width: 45,
+                  height: 45,
+                ),
+                SizedBox(height: 13),
+                Text(
+                  text,
+                  style: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                    color: Colors.black,
                   ),
                 ),
-                SizedBox(width: 17),
-                Container(
-                  height: 15,
-                  width: 37,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: ColorsTheme().primary,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.star,
-                        size: 10,
-                        color: Colors.white,
+                SizedBox(height: 10),
+                Dash(
+                  direction: Axis.horizontal,
+                  length: MediaQuery.sizeOf(context).width - 312,
+                  dashLength: 5,
+                  dashColor: Color(0xffE9E9E9),
+                ),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 15,
+                      width: 37,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.transparent,
                       ),
-                      SizedBox(width: 3),
-                      Text(
-                        '0.9',
-                        style: GoogleFonts.outfit(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 10,
-                          color: Colors.white,
-                        ),
+                      child: Stack(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 10,
+                                color: Color(0xffCED3DA),
+                              ),
+                              SizedBox(width: 3),
+                              Text(
+                                '0.8',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: Color(0xffCED3DA),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              width: 34,
+                              height: 1,
+                              color: Color(0xffCED3DA),
+                            ),
+                          )
+                        ],
                       ),
-                    ],
-                  ),
-                )
+                    ),
+                    SizedBox(width: 17),
+                    Container(
+                      height: 15,
+                      width: 37,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: ColorsTheme().primary,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 10,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 3),
+                          Text(
+                            '0.9',
+                            style: GoogleFonts.outfit(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 10,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
+            if (isPromo!)
+              Positioned(
+                  top: -8,
+                  left: 25,
+                  child: SvgPicture.asset('assets/promo_badge.svg')),
+            if (isPromo == false)
+              Align(
+                alignment: Alignment.topCenter,
+                child: SizedBox(
+                  width: 54,
+                  height: 17,
+                ),
+              ),
           ],
         ),
       ),

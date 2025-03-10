@@ -91,10 +91,10 @@ class _TNCScreenState extends State<TNCScreen> {
               ],
             ),
             SizedBox(height: 15),
-            InkWell(
+            GestureDetector(
               onTap: isChecked
                   ? () {
-                      Navigator.pushNamed(context, '/navbar');
+                      Navigator.pushReplacementNamed(context, '/navbar');
                     }
                   : null,
               child: Container(

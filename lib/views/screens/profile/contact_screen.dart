@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactScreen extends StatelessWidget {
   const ContactScreen({super.key});
@@ -110,24 +111,36 @@ class ContactScreen extends StatelessWidget {
                             icon: 'assets/contact_email.png',
                             title: 'Email',
                             subtile: 'customercare@pulsain.com',
+                            onTap: () => launchUrl(
+                              Uri.parse('mailto:customercare@pulsain.com'),
+                            ),
                           ),
                           SizedBox(height: 30),
                           contactItem(
                             icon: 'assets/contact_instagram.png',
                             title: 'Instagram',
                             subtile: '@pulsain',
+                            onTap: () => launchUrl(
+                              Uri.parse('https://www.instagram.com/google/'),
+                            ),
                           ),
                           SizedBox(height: 30),
                           contactItem(
                             icon: 'assets/contact_whatsapp.png',
                             title: 'Whatsapp',
                             subtile: '0821-1111-1111',
+                            onTap: () => launchUrl(
+                              Uri.parse('https://wa.me/+6282111111111'),
+                            ),
                           ),
                           SizedBox(height: 30),
                           contactItem(
                             icon: 'assets/contact_website.png',
                             title: 'Website',
                             subtile: 'www.pulsain.com',
+                            onTap: () => launchUrl(
+                              Uri.parse('https://www.google.co.id/?hl=id'),
+                            ),
                           ),
                         ],
                       ),
@@ -136,53 +149,59 @@ class ContactScreen extends StatelessWidget {
                 )
               ],
             ),
-            Align(
-                alignment: Alignment.bottomRight,
-                child: Image.asset(
-                  'assets/contact_people.png',
-                  width: 290.25,
-                  height: 399,
-                )),
+            Positioned(
+              bottom: -8,
+              right: 0,
+              child: Image.asset(
+                'assets/contact_people.png',
+                width: 290.25,
+                height: 399,
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Row contactItem({
+  Widget contactItem({
     required String icon,
     required String title,
     required String subtile,
+    required Function()? onTap,
   }) {
-    return Row(
-      children: [
-        Image.asset(
-          icon,
-          scale: 4,
-        ),
-        SizedBox(width: 13),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: GoogleFonts.outfit(
-                fontWeight: FontWeight.w500,
-                fontSize: 14,
-                color: Colors.white,
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Image.asset(
+            icon,
+            scale: 4,
+          ),
+          SizedBox(width: 13),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: GoogleFonts.outfit(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
               ),
-            ),
-            Text(
-              subtile,
-              style: GoogleFonts.outfit(
-                fontWeight: FontWeight.w300,
-                fontSize: 14,
-                color: Colors.white,
+              Text(
+                subtile,
+                style: GoogleFonts.outfit(
+                  fontWeight: FontWeight.w300,
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
               ),
-            ),
-          ],
-        )
-      ],
+            ],
+          )
+        ],
+      ),
     );
   }
 }

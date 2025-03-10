@@ -58,7 +58,7 @@ class DaftarRekeningScreen extends StatelessWidget {
   }
 
   Widget daftarRekening(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {},
       child: Container(
         decoration: BoxDecoration(

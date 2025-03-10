@@ -48,7 +48,7 @@ class _NavbarState extends State<Navbar> {
     }) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 10),
-        child: InkWell(
+        child: GestureDetector(
           onTap: () {
             onTabTapped(index!);
           },

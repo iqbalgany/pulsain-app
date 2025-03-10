@@ -24,7 +24,7 @@ class ChatScreen extends StatelessWidget {
               ),
               child: ListTile(
                 leading: IconButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pop(context),
                   icon: Icon(
                     Icons.arrow_back,
                     color: ColorsTheme().primary,

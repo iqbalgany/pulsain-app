@@ -31,7 +31,11 @@ class GetStartedScreen extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: SvgPicture.asset('assets/secure.svg')),
                 SizedBox(height: 83),
-                Image.asset('assets/logo_pulsain.png'),
+                Image.asset(
+                  'assets/logo_pulsain.png',
+                  width: 63,
+                  height: 81.5,
+                ),
                 SizedBox(height: 11),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -82,7 +86,7 @@ class GetStartedScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 36),
-                InkWell(
+                GestureDetector(
                   onTap: () => Navigator.pushNamed(context, '/tnc'),
                   child: Container(
                     padding: EdgeInsets.symmetric(

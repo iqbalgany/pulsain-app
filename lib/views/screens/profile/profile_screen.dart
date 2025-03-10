@@ -154,7 +154,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 20),
                     Divider(),
                     SizedBox(height: 20),
-                    InkWell(
+                    GestureDetector(
                       onTap: () {},
                       child: Container(
                         width: MediaQuery.sizeOf(context).width,
@@ -258,7 +258,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(height: 35),
                         Divider(),
                         SizedBox(height: 20),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {},
                           child: Container(
                             width: MediaQuery.sizeOf(context).width,
@@ -401,7 +401,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(height: 35),
                         Divider(),
                         SizedBox(height: 20),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {},
                           child: Container(
                             width: MediaQuery.sizeOf(context).width,
@@ -507,7 +507,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(height: 35),
                         Divider(),
                         SizedBox(height: 20),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {},
                           child: Container(
                             width: MediaQuery.sizeOf(context).width,
@@ -572,9 +572,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             GestureDetector(
               onTap: _editPhotoProfile,
-              child: SvgPicture.asset(
-                'assets/avatar.svg',
-                width: 102.86,
+              child: SizedBox(
+                width: 105,
+                height: 105,
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: SvgPicture.asset(
+                        'assets/avatar.svg',
+                        width: 102.86,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Image.asset(
+                        'assets/icon_edit_foto.png',
+                        width: 30,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 15),

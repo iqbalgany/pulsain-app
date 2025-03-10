@@ -315,7 +315,7 @@ class _ActivityStatusScreenState extends State<ActivityStatusScreen> {
                       SizedBox(height: 163),
 
                       /// BUTTON
-                      InkWell(
+                      GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Container(
                           width: 325,

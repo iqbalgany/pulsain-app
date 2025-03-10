@@ -53,22 +53,25 @@ class TambahRekeningScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 10),
-                        InkWell(
+                        GestureDetector(
                           onTap: () =>
                               Navigator.pushNamed(context, '/bank-list'),
                           child: TextField(
                             enabled: false,
                             decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.red,
-                                ),
-                              ),
+                              filled: true,
+                              fillColor: Color(0xffFBFBFF),
+                              border: OutlineInputBorder(),
                               hintText: 'Pilih Bank',
                               hintStyle: GoogleFonts.outfit(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w300,
                                 color: Color(0xff99969C),
+                              ),
+                              disabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xffCFD7FF),
+                                ),
                               ),
                               suffixIcon: Icon(
                                 Icons.arrow_drop_down_outlined,
@@ -99,6 +102,8 @@ class TambahRekeningScreen extends StatelessWidget {
                         TextField(
                           cursorColor: ColorsTheme().primary,
                           decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Color(0xffFBFBFF),
                             hintText: 'Masukkan nomor rekening',
                             hintStyle: GoogleFonts.outfit(
                               fontSize: 12,
@@ -107,7 +112,7 @@ class TambahRekeningScreen extends StatelessWidget {
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xff99969C),
+                                color: Color(0xffCFD7FF),
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -139,11 +144,9 @@ class TambahRekeningScreen extends StatelessWidget {
                         TextField(
                           cursorColor: ColorsTheme().primary,
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xff99969C),
-                              ),
-                            ),
+                            filled: true,
+                            fillColor: Color(0xffFBFBFF),
+                            border: OutlineInputBorder(),
                             hintText: 'Masukkan nama pemilik rekening',
                             hintStyle: GoogleFonts.outfit(
                               fontSize: 12,
@@ -152,7 +155,7 @@ class TambahRekeningScreen extends StatelessWidget {
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xff99969C),
+                                color: Color(0xffCFD7FF),
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(

@@ -149,6 +149,188 @@ class _InboxScreenState extends State<InboxScreen> {
     return Colors.orange;
   }
 
+  void option() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          width: MediaQuery.sizeOf(context).width,
+          height: 270,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Column(
+            children: [
+              SizedBox(height: 30),
+              Text(
+                'Opsi Kotak Masuk',
+                style: GoogleFonts.outfit(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 15),
+              Divider(),
+              SizedBox(height: 20),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Color(0xffEDFCFF),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.flag, color: ColorsTheme().primary),
+                    SizedBox(width: 14),
+                    Text(
+                      'Tandai Pesan',
+                      style: GoogleFonts.outfit(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Spacer(),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: ColorsTheme().primary,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.white,
+                        size: 18,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                  showModalBottomSheet(
+                    backgroundColor: Colors.white,
+                    context: context,
+                    builder: (context) {
+                      return StatefulBuilder(
+                        builder: (BuildContext context, setState) {
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                // currentList.removeAt(index);
+                              });
+                            },
+                            child: Container(
+                              height: 305,
+                              width: MediaQuery.sizeOf(context).width,
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 30),
+                                  Text(
+                                    'Konfirmasi',
+                                    style: GoogleFonts.outfit(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Divider(),
+                                  SizedBox(height: 20),
+                                  SvgPicture.asset('assets/delete_file.svg'),
+                                  SizedBox(height: 20),
+                                  Text(
+                                    'Hapus Pesan',
+                                    style: GoogleFonts.outfit(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Anda yakin ingin menghapus pesan yang ada?',
+                                    style: GoogleFonts.outfit(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  SizedBox(height: 37.5),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 15,
+                                      horizontal: 42,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: ColorsTheme().primary,
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Text(
+                                      'Yakin, Hapus Semua',
+                                      style: GoogleFonts.outfit(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Color(0xffEDFCFF),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.delete, color: Color(0xffFF6565)),
+                      SizedBox(width: 14),
+                      Text(
+                        'Hapus Semua Pesan',
+                        style: GoogleFonts.outfit(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          color: Colors.black,
+                        ),
+                      ),
+                      Spacer(),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: Color(0xffFF6565),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: Colors.white,
+                          size: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     List<Map<String, String>> currentList =
@@ -174,190 +356,7 @@ class _InboxScreenState extends State<InboxScreen> {
               ),
             ),
             trailing: IconButton(
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return Container(
-                      width: MediaQuery.sizeOf(context).width,
-                      height: 250,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 30),
-                          Text(
-                            'Opsi Kotak Masuk',
-                            style: GoogleFonts.outfit(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                              color: Colors.black,
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                          Divider(),
-                          SizedBox(height: 20),
-                          Container(
-                            margin: EdgeInsets.symmetric(horizontal: 20),
-                            padding: EdgeInsets.all(15),
-                            decoration: BoxDecoration(
-                              color: Color(0xffEDFCFF),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(Icons.flag, color: ColorsTheme().primary),
-                                SizedBox(width: 14),
-                                Text(
-                                  'Tandai Pesan',
-                                  style: GoogleFonts.outfit(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                Spacer(),
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  decoration: BoxDecoration(
-                                    color: ColorsTheme().primary,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    color: Colors.white,
-                                    size: 18,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pop(context);
-                              showModalBottomSheet(
-                                backgroundColor: Colors.white,
-                                context: context,
-                                builder: (context) {
-                                  return StatefulBuilder(
-                                    builder: (BuildContext context, setState) {
-                                      return InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            // currentList.removeAt(index);
-                                          });
-                                        },
-                                        child: Container(
-                                          height: 305,
-                                          width:
-                                              MediaQuery.sizeOf(context).width,
-                                          child: Column(
-                                            children: [
-                                              SizedBox(height: 30),
-                                              Text(
-                                                'Konfirmasi',
-                                                style: GoogleFonts.outfit(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 18,
-                                                  color: Colors.black,
-                                                ),
-                                              ),
-                                              SizedBox(height: 15),
-                                              Divider(),
-                                              SizedBox(height: 20),
-                                              SvgPicture.asset(
-                                                  'assets/delete_file.svg'),
-                                              SizedBox(height: 20),
-                                              Text(
-                                                'Hapus Pesan',
-                                                style: GoogleFonts.outfit(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 16,
-                                                  color: Colors.black,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Anda yakin ingin menghapus pesan yang ada?',
-                                                style: GoogleFonts.outfit(
-                                                  fontWeight: FontWeight.w300,
-                                                  fontSize: 12,
-                                                  color: Colors.black,
-                                                ),
-                                              ),
-                                              SizedBox(height: 37.5),
-                                              Container(
-                                                padding: EdgeInsets.symmetric(
-                                                  vertical: 15,
-                                                  horizontal: 42,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: ColorsTheme().primary,
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Text(
-                                                  'Yakin, Hapus Semua',
-                                                  style: GoogleFonts.outfit(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 16,
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
-                              );
-                            },
-                            child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 20),
-                              padding: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                color: Color(0xffEDFCFF),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.delete, color: Color(0xffFF6565)),
-                                  SizedBox(width: 14),
-                                  Text(
-                                    'Hapus Semua Pesan',
-                                    style: GoogleFonts.outfit(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Container(
-                                    padding: EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffFF6565),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      color: Colors.white,
-                                      size: 18,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                );
-              },
+              onPressed: option,
               icon: Icon(Icons.more_vert),
             ),
           ),
@@ -369,6 +368,7 @@ class _InboxScreenState extends State<InboxScreen> {
           ),
           Expanded(
             child: ListView.builder(
+              padding: EdgeInsets.all(0),
               itemCount: currentList.length,
               itemBuilder: (context, index) {
                 return Slidable(
@@ -400,7 +400,7 @@ class _InboxScreenState extends State<InboxScreen> {
   }
 
   Widget notificationTile(List<Map<String, String>> list, int index) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         setState(() {
           isTappedList[index] = !isTappedList[index];

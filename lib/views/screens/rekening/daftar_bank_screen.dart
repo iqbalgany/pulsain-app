@@ -37,6 +37,7 @@ class DaftarBankScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25, 0, 25, 20),
                 child: ListView(
+                  padding: EdgeInsets.all(0),
                   children: [
                     ...List.generate(
                       15,

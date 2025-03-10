@@ -44,7 +44,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (currentIndex < onboardingData.length - 1) {
         currentIndex++;
       } else {
-        Navigator.pushReplacementNamed(context, '/tnc');
+        Navigator.pushReplacementNamed(context, '/get-started');
       }
     });
   }
@@ -89,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 color: ColorsTheme().primary,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child: InkWell(
+              child: GestureDetector(
                 onTap: _nextStep,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

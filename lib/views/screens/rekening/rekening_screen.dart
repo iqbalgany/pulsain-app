@@ -15,7 +15,7 @@ class RekeningScreen extends StatelessWidget {
             SizedBox(height: 47),
             ListTile(
               leading: IconButton(
-                onPressed: () => Navigator.pop(context),
+                onPressed: () => Navigator.pushNamed(context, '/navbar'),
                 icon: Icon(
                   Icons.arrow_back,
                   color: ColorsTheme().primary,
@@ -37,6 +37,7 @@ class RekeningScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25, 0, 25, 20),
                 child: ListView(
+                  padding: EdgeInsets.all(0),
                   children: [
                     ...List.generate(
                       10,
@@ -61,7 +62,7 @@ class RekeningScreen extends StatelessWidget {
   }
 
   Widget bankAccountItem(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => Navigator.pushNamed(context, '/edit-bank-account'),
       child: Container(
         decoration: BoxDecoration(
@@ -101,7 +102,7 @@ class RekeningScreen extends StatelessWidget {
   }
 
   Widget buttonTambahRekening(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => Navigator.pushNamed(context, '/add-bank-account'),
       child: Container(
         padding: EdgeInsets.symmetric(

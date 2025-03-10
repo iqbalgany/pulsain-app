@@ -33,7 +33,7 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
             ),
             SizedBox(height: 15),
             Text(
-              'Ubah Nama Lengkap',
+              'Peringatan',
               style: GoogleFonts.outfit(
                 fontWeight: FontWeight.w500,
                 fontSize: 18,
@@ -72,7 +72,7 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
                       Row(
                         children: [
                           Expanded(
-                            child: InkWell(
+                            child: GestureDetector(
                               onTap: () => Navigator.pop(context),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width,
@@ -99,7 +99,7 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
                           ),
                           SizedBox(width: 10),
                           Expanded(
-                            child: InkWell(
+                            child: GestureDetector(
                               onTap: () {
                                 Navigator.pop(context);
                                 Navigator.pushNamed(
@@ -179,11 +179,20 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  trailing: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.notifications_none_outlined,
-                      color: Colors.white,
+                  trailing: GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Color(0xff8aa7f7),
+                        borderRadius: BorderRadius.circular(8.571),
+                      ),
+                      child: Icon(
+                        Icons.notifications_none_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -415,7 +424,7 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
                           ),
                         ),
                         SizedBox(height: 7),
-                        InkWell(
+                        GestureDetector(
                           onTap: () =>
                               Navigator.pushNamed(context, '/rekening-list'),
                           child: TextField(
@@ -502,7 +511,7 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
                     SizedBox(height: 18),
 
                     ///
-                    InkWell(
+                    GestureDetector(
                       onTap: kofirmasiTukarPulsa,
                       child: Container(
                         padding: EdgeInsets.symmetric(

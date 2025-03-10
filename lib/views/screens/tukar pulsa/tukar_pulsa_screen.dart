@@ -54,11 +54,20 @@ class _TukarPulsaScreenState extends State<TukarPulsaScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  trailing: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.notifications_none_outlined,
-                      color: Colors.white,
+                  trailing: GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Color(0xff8aa7f7),
+                        borderRadius: BorderRadius.circular(8.571),
+                      ),
+                      child: Icon(
+                        Icons.notifications_none_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -236,7 +245,7 @@ class _TukarPulsaScreenState extends State<TukarPulsaScreen> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        InkWell(
+                        GestureDetector(
                           onTap: () =>
                               Navigator.pushNamed(context, '/rekening-list'),
                           child: TextField(
@@ -326,7 +335,7 @@ class _TukarPulsaScreenState extends State<TukarPulsaScreen> {
                     Spacer(),
 
                     ///
-                    InkWell(
+                    GestureDetector(
                       onTap: isChecked
                           ? () {
                               Navigator.pushNamed(

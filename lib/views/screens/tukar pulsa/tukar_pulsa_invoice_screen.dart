@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TukarPulsaInvoiceScreen extends StatefulWidget {
   const TukarPulsaInvoiceScreen({super.key});
@@ -51,11 +52,20 @@ class _TukarPulsaInvoiceScreenState extends State<TukarPulsaInvoiceScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  trailing: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.notifications_none_outlined,
-                      color: Colors.white,
+                  trailing: GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Color(0xff8aa7f7),
+                        borderRadius: BorderRadius.circular(8.571),
+                      ),
+                      child: Icon(
+                        Icons.notifications_none_outlined,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -295,8 +305,9 @@ class _TukarPulsaInvoiceScreenState extends State<TukarPulsaInvoiceScreen> {
                     Spacer(),
 
                     ///
-                    InkWell(
-                      onTap: () {},
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(
+                          context, '/activity-status-pending'),
                       child: Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 42,
@@ -304,6 +315,7 @@ class _TukarPulsaInvoiceScreenState extends State<TukarPulsaInvoiceScreen> {
                         ),
                         width: MediaQuery.sizeOf(context).width,
                         decoration: BoxDecoration(
+                          color: Color(0xffFFFFFF),
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all(color: ColorsTheme().primary),
                         ),
@@ -321,8 +333,10 @@ class _TukarPulsaInvoiceScreenState extends State<TukarPulsaInvoiceScreen> {
                     SizedBox(height: 10),
 
                     ///
-                    InkWell(
-                      onTap: () {},
+                    GestureDetector(
+                      onTap: () => launchUrl(
+                        Uri.parse('https://wa.me/+6282198437823'),
+                      ),
                       child: Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 42,

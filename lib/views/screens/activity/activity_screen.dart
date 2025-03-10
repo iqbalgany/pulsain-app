@@ -248,7 +248,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
   }
 
   Widget successCard(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
