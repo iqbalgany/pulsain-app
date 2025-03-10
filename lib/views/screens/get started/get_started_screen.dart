@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -87,7 +88,7 @@ class GetStartedScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 36),
                 GestureDetector(
-                  onTap: () => Navigator.pushNamed(context, '/tnc'),
+                  onTap: () => Navigator.pushNamed(context, AppRoutes.tnc),
                   child: Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 31,

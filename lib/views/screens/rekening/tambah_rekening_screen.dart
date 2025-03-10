@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class TambahRekeningScreen extends StatelessWidget {
   const TambahRekeningScreen({super.key});
@@ -13,25 +15,10 @@ class TambahRekeningScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 47),
-            ListTile(
-              leading: IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ColorsTheme().primary,
-                ),
-              ),
-              title: Text(
-                'Tambah Rekening',
-                style: GoogleFonts.outfit(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_outlined),
-              ),
+            ApplicationBar(
+              text: 'Tambah Rekening',
+              leadingOnTap: () => Navigator.pop(context),
+              trailingOnTap: () {},
             ),
             Expanded(
               child: Padding(
@@ -55,7 +42,7 @@ class TambahRekeningScreen extends StatelessWidget {
                         SizedBox(height: 10),
                         GestureDetector(
                           onTap: () =>
-                              Navigator.pushNamed(context, '/bank-list'),
+                              Navigator.pushNamed(context, AppRoutes.bankList),
                           child: TextField(
                             enabled: false,
                             decoration: InputDecoration(

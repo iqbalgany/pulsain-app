@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -550,25 +552,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             SizedBox(height: 47),
-            ListTile(
-              leading: IconButton(
-                onPressed: () => Navigator.pushNamed(context, '/navbar'),
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ColorsTheme().primary,
-                ),
-              ),
-              title: Text(
-                'Profile',
-                style: GoogleFonts.outfit(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_outlined),
-              ),
+            ApplicationBar(
+              text: 'Profile',
+              leadingOnTap: () =>
+                  Navigator.pushNamed(context, AppRoutes.navbar),
+              trailingOnTap: () {},
             ),
             GestureDetector(
               onTap: _editPhotoProfile,
@@ -640,7 +628,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(height: 10),
                   profileItem(
                     icon: 'assets/icon_help.png',
-                    onTap: () => Navigator.pushNamed(context, '/contact'),
+                    onTap: () =>
+                        Navigator.pushNamed(context, AppRoutes.contact),
                     title: 'Pusat Bantuan',
                     subtitle: 'Hubungi kami terkait kendala anda',
                   ),

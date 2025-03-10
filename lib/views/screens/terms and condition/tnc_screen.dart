@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
 
 class TNCScreen extends StatefulWidget {
@@ -94,7 +95,7 @@ class _TNCScreenState extends State<TNCScreen> {
             GestureDetector(
               onTap: isChecked
                   ? () {
-                      Navigator.pushReplacementNamed(context, '/navbar');
+                      Navigator.pushReplacementNamed(context, AppRoutes.navbar);
                     }
                   : null,
               child: Container(

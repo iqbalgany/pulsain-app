@@ -161,7 +161,8 @@ class ChatScreen extends StatelessWidget {
                     children: [
                       Container(
                         width: 173,
-                        height: 62,
+                        height: 230,
+                        padding: EdgeInsets.all(6.61),
                         decoration: BoxDecoration(
                           color: Color(0xffF6F1EB),
                           borderRadius: BorderRadius.only(
@@ -172,13 +173,19 @@ class ChatScreen extends StatelessWidget {
                           ),
                         ),
                         child: Center(
-                          child: Text(
-                            'This is a sample image',
-                            style: GoogleFonts.outfit(
-                              fontWeight: FontWeight.w300,
-                              fontSize: 14,
-                              color: Color(0xff505050),
-                            ),
+                          child: Column(
+                            children: [
+                              Image.asset('assets/invoice.png'),
+                              SizedBox(height: 6.61),
+                              Text(
+                                'This is a sample image',
+                                style: GoogleFonts.outfit(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 14,
+                                  color: Color(0xff505050),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -232,7 +239,6 @@ class ChatScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
             Container(
               padding: EdgeInsets.symmetric(
                 horizontal: 20,
@@ -261,6 +267,7 @@ class ChatScreen extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                           filled: true,
+                          contentPadding: EdgeInsets.only(bottom: 6, left: 7),
                           fillColor: Color(0xffF7F7FC),
                           border:
                               OutlineInputBorder(borderSide: BorderSide.none)),

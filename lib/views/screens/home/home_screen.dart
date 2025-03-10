@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -66,86 +67,7 @@ class HomeScreen extends StatelessWidget {
                 padding: EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          '30.000 - 1.000.000',
-                          style: GoogleFonts.outfit(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 12,
-                            color: Colors.black,
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          height: 15,
-                          width: 37,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.transparent,
-                          ),
-                          child: Stack(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    size: 10,
-                                    color: Color(0xffCED3DA),
-                                  ),
-                                  SizedBox(width: 3),
-                                  Text(
-                                    '0.8',
-                                    style: GoogleFonts.outfit(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 10,
-                                      color: Color(0xffCED3DA),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  width: 34,
-                                  height: 1,
-                                  color: Color(0xffCED3DA),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 17),
-                        Container(
-                          height: 15,
-                          width: 37,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: ColorsTheme().primary,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                size: 10,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 3),
-                              Text(
-                                '0.9',
-                                style: GoogleFonts.outfit(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 10,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    daftarInformasiRate(),
                     SizedBox(height: 10),
                     Dash(
                       direction: Axis.horizontal,
@@ -154,86 +76,7 @@ class HomeScreen extends StatelessWidget {
                       dashColor: Color(0xffE9E9E9),
                     ),
                     SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Text(
-                          '30.000 - 10.000.000',
-                          style: GoogleFonts.outfit(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 12,
-                            color: Colors.black,
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          height: 15,
-                          width: 37,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.transparent,
-                          ),
-                          child: Stack(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    size: 10,
-                                    color: Color(0xffCED3DA),
-                                  ),
-                                  SizedBox(width: 3),
-                                  Text(
-                                    '0.8',
-                                    style: GoogleFonts.outfit(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 10,
-                                      color: Color(0xffCED3DA),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  width: 34,
-                                  height: 1,
-                                  color: Color(0xffCED3DA),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 17),
-                        Container(
-                          height: 15,
-                          width: 37,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: ColorsTheme().primary,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                size: 10,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 3),
-                              Text(
-                                '0.9',
-                                style: GoogleFonts.outfit(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 10,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    daftarInformasiRate(),
                     SizedBox(height: 10),
                     Dash(
                       direction: Axis.horizontal,
@@ -242,92 +85,13 @@ class HomeScreen extends StatelessWidget {
                       dashColor: Color(0xffE9E9E9),
                     ),
                     SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Text(
-                          '30.000 - 100.000.000',
-                          style: GoogleFonts.outfit(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 12,
-                            color: Colors.black,
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          height: 15,
-                          width: 37,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.transparent,
-                          ),
-                          child: Stack(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    size: 10,
-                                    color: Color(0xffCED3DA),
-                                  ),
-                                  SizedBox(width: 3),
-                                  Text(
-                                    '0.8',
-                                    style: GoogleFonts.outfit(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 10,
-                                      color: Color(0xffCED3DA),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  width: 34,
-                                  height: 1,
-                                  color: Color(0xffCED3DA),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 17),
-                        Container(
-                          height: 15,
-                          width: 37,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: ColorsTheme().primary,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                size: 10,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 3),
-                              Text(
-                                '0.9',
-                                style: GoogleFonts.outfit(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 10,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    daftarInformasiRate(),
                   ],
                 ),
               ),
               Divider(),
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, '/tukar-pulsa'),
+                onTap: () => Navigator.pushNamed(context, AppRoutes.tukarPulsa),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width,
                   padding: EdgeInsets.symmetric(
@@ -442,6 +206,89 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget daftarInformasiRate() {
+    return Row(
+      children: [
+        Text(
+          '30.000 - 1.000.000',
+          style: GoogleFonts.outfit(
+            fontWeight: FontWeight.w300,
+            fontSize: 12,
+            color: Colors.black,
+          ),
+        ),
+        Spacer(),
+        Container(
+          height: 15,
+          width: 37,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: Colors.transparent,
+          ),
+          child: Stack(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.star,
+                    size: 10,
+                    color: Color(0xffCED3DA),
+                  ),
+                  SizedBox(width: 3),
+                  Text(
+                    '0.8',
+                    style: GoogleFonts.outfit(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 10,
+                      color: Color(0xffCED3DA),
+                    ),
+                  ),
+                ],
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: 34,
+                  height: 1,
+                  color: Color(0xffCED3DA),
+                ),
+              )
+            ],
+          ),
+        ),
+        SizedBox(width: 17),
+        Container(
+          height: 15,
+          width: 37,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: ColorsTheme().primary,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.star,
+                size: 10,
+                color: Colors.white,
+              ),
+              SizedBox(width: 3),
+              Text(
+                '0.9',
+                style: GoogleFonts.outfit(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 10,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -567,7 +414,7 @@ class AppBar extends StatelessWidget {
           ),
           child: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/inbox');
+              Navigator.pushNamed(context, AppRoutes.inbox);
             },
             icon: Icon(Icons.notifications_none_outlined),
           ),
@@ -618,8 +465,9 @@ class CarouselCard extends StatelessWidget {
     return CarouselSlider(
       options: CarouselOptions(
         autoPlay: true,
-        viewportFraction: 1.0,
-        height: 160,
+        viewportFraction: 1,
+        enlargeCenterPage: false,
+        aspectRatio: 16 / 9,
       ),
       items: [
         'assets/home_card.png',

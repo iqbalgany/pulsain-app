@@ -376,7 +376,17 @@ class _InboxScreenState extends State<InboxScreen> {
                   startActionPane: ActionPane(
                     extentRatio: 0.1,
                     motion: ScrollMotion(),
-                    dismissible: DismissiblePane(onDismissed: () {}),
+                    dismissible: DismissiblePane(
+                      onDismissed: () {
+                        setState(
+                          () {
+                            if (index < currentList.length) {
+                              currentList.removeAt(index);
+                            }
+                          },
+                        );
+                      },
+                    ),
                     children: [
                       SlidableAction(
                         onPressed: (context) {

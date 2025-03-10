@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class ActivityStatusScreen extends StatefulWidget {
   const ActivityStatusScreen({super.key});
@@ -35,25 +36,10 @@ class _ActivityStatusScreenState extends State<ActivityStatusScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(height: 47),
-              ListTile(
-                leading: IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: ColorsTheme().primary,
-                  ),
-                ),
-                title: Text(
-                  'Orders',
-                  style: GoogleFonts.outfit(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.notifications_none_outlined),
-                ),
+              ApplicationBar(
+                text: 'Orders',
+                trailingOnTap: () {},
+                leadingOnTap: () => Navigator.pop(context),
               ),
               SizedBox(height: 36),
               GestureDetector(

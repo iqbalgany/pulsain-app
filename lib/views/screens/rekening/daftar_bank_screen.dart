@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class DaftarBankScreen extends StatelessWidget {
   const DaftarBankScreen({super.key});
@@ -13,25 +14,10 @@ class DaftarBankScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 47),
-            ListTile(
-              leading: IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ColorsTheme().primary,
-                ),
-              ),
-              title: Text(
-                'Daftar Bank',
-                style: GoogleFonts.outfit(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_outlined),
-              ),
+            ApplicationBar(
+              text: 'Daftar Bank',
+              leadingOnTap: () => Navigator.pop(context),
+              trailingOnTap: () {},
             ),
             Expanded(
               child: Padding(

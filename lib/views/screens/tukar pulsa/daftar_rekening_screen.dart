@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class DaftarRekeningScreen extends StatelessWidget {
   const DaftarRekeningScreen({super.key});
@@ -13,25 +14,10 @@ class DaftarRekeningScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 47),
-            ListTile(
-              leading: IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ColorsTheme().primary,
-                ),
-              ),
-              title: Text(
-                'Daftar Rekening',
-                style: GoogleFonts.outfit(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_outlined),
-              ),
+            ApplicationBar(
+              text: 'Daftar Rekening',
+              leadingOnTap: () => Navigator.pop(context),
+              trailingOnTap: () {},
             ),
             Expanded(
               child: Padding(

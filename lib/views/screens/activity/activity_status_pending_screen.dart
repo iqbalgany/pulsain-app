@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class ActivityStatusPendingScreen extends StatefulWidget {
   const ActivityStatusPendingScreen({super.key});
@@ -31,25 +33,10 @@ class _ActivityStatusPendingScreenState
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(height: 47),
-              ListTile(
-                leading: IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: ColorsTheme().primary,
-                  ),
-                ),
-                title: Text(
-                  'Orders',
-                  style: GoogleFonts.outfit(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.notifications_none_outlined),
-                ),
+              ApplicationBar(
+                text: 'Orders',
+                leadingOnTap: () => Navigator.pop(context),
+                trailingOnTap: () {},
               ),
               SizedBox(height: 36),
               Center(
@@ -280,7 +267,7 @@ class _ActivityStatusPendingScreenState
                     ),
                     SizedBox(height: 10),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, '/chat'),
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.chat),
                       child: Container(
                         width: 325,
                         padding: EdgeInsets.symmetric(

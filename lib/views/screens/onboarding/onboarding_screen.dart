@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -44,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (currentIndex < onboardingData.length - 1) {
         currentIndex++;
       } else {
-        Navigator.pushReplacementNamed(context, '/get-started');
+        Navigator.pushReplacementNamed(context, AppRoutes.getStarted);
       }
     });
   }

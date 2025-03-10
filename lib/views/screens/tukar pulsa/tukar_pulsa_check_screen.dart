@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
 
 class TukarPulsaCheckScreen extends StatefulWidget {
@@ -103,7 +104,7 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
                               onTap: () {
                                 Navigator.pop(context);
                                 Navigator.pushNamed(
-                                    context, '/tukar-pulsa-invoice');
+                                    context, AppRoutes.tukarPulsaInvoice);
                               },
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width,
@@ -425,8 +426,8 @@ class _TukarPulsaCheckScreenState extends State<TukarPulsaCheckScreen> {
                         ),
                         SizedBox(height: 7),
                         GestureDetector(
-                          onTap: () =>
-                              Navigator.pushNamed(context, '/rekening-list'),
+                          onTap: () => Navigator.pushNamed(
+                              context, AppRoutes.rekeningList),
                           child: TextField(
                             enabled: false,
                             decoration: InputDecoration(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class RekeningScreen extends StatelessWidget {
   const RekeningScreen({super.key});
@@ -13,25 +15,11 @@ class RekeningScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 47),
-            ListTile(
-              leading: IconButton(
-                onPressed: () => Navigator.pushNamed(context, '/navbar'),
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ColorsTheme().primary,
-                ),
-              ),
-              title: Text(
-                'Daftar Rekening',
-                style: GoogleFonts.outfit(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_outlined),
-              ),
+            ApplicationBar(
+              text: 'Daftar Rekening',
+              leadingOnTap: () =>
+                  Navigator.pushNamed(context, AppRoutes.navbar),
+              trailingOnTap: () {},
             ),
             Expanded(
               child: Padding(
@@ -63,7 +51,7 @@ class RekeningScreen extends StatelessWidget {
 
   Widget bankAccountItem(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/edit-bank-account'),
+      onTap: () => Navigator.pushNamed(context, AppRoutes.editBankAccount),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -103,7 +91,7 @@ class RekeningScreen extends StatelessWidget {
 
   Widget buttonTambahRekening(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/add-bank-account'),
+      onTap: () => Navigator.pushNamed(context, AppRoutes.addBankAccount),
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 42,

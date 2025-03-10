@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -307,7 +308,7 @@ class _TukarPulsaInvoiceScreenState extends State<TukarPulsaInvoiceScreen> {
                     ///
                     GestureDetector(
                       onTap: () => Navigator.pushNamed(
-                          context, '/activity-status-pending'),
+                          context, AppRoutes.activityStatusPending),
                       child: Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 42,

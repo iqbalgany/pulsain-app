@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 import 'package:pulsain/views/screens/activity/activity_status_screen.dart';
 
 class ActivityScreen extends StatefulWidget {
@@ -21,25 +23,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
         child: Column(
           children: [
             SizedBox(height: 47),
-            ListTile(
-              leading: IconButton(
-                onPressed: () => Navigator.pushNamed(context, '/navbar'),
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ColorsTheme().primary,
-                ),
-              ),
-              title: Text(
-                'Kotak Masuk',
-                style: GoogleFonts.outfit(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_outlined),
-              ),
+            ApplicationBar(
+              text: 'Kotak Masuk',
+              leadingOnTap: () =>
+                  Navigator.pushNamed(context, AppRoutes.navbar),
+              trailingOnTap: () {},
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -77,7 +65,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
     );
   }
 
-  Expanded statusOrder(BuildContext context, String text) {
+  Widget statusOrder(BuildContext context, String text) {
     bool isSelected = selectedTab == text;
     return Expanded(
       child: GestureDetector(
@@ -114,7 +102,8 @@ class _ActivityScreenState extends State<ActivityScreen> {
 
   Widget orderCard(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/activity-status-pending'),
+      onTap: () =>
+          Navigator.pushNamed(context, AppRoutes.activityStatusPending),
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 15,

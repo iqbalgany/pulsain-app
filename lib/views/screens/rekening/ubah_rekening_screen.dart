@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pulsain/constans/app_routes.dart';
 import 'package:pulsain/constans/colors.dart';
+import 'package:pulsain/views/appbar.dart';
 
 class UbahRekeningScreen extends StatelessWidget {
   const UbahRekeningScreen({super.key});
@@ -15,25 +17,10 @@ class UbahRekeningScreen extends StatelessWidget {
             SizedBox(height: 47),
 
             /// HEADER
-            ListTile(
-              leading: IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: ColorsTheme().primary,
-                ),
-              ),
-              title: Text(
-                'Ubah Rekening',
-                style: GoogleFonts.outfit(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_outlined),
-              ),
+            ApplicationBar(
+              text: 'Ubah Rekening',
+              leadingOnTap: () => Navigator.pop(context),
+              trailingOnTap: () {},
             ),
 
             Padding(
@@ -56,7 +43,8 @@ class UbahRekeningScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       GestureDetector(
-                        onTap: () => Navigator.pushNamed(context, '/bank-list'),
+                        onTap: () =>
+                            Navigator.pushNamed(context, AppRoutes.bankList),
                         child: TextField(
                           enabled: false,
                           decoration: InputDecoration(
